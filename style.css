@@ -1,0 +1,487 @@
+/* ---------- Google Fonts y Font Awesome ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* ---------- Variables globales ---------- */
+:root {
+    --color-olive:    #6B8E23;
+    --color-gold:     #C8A951;
+    --color-sand:     #E8E4DC;
+    --color-dark:     #0E1117;
+    --color-card-bg:  #161B22;
+    --font-display:   'Playfair Display', Georgia, serif;
+    --font-body:      'Inter', -apple-system, sans-serif;
+    --radius:         16px;
+    --shadow:         0 8px 32px rgba(0,0,0,.45);
+}
+
+/* ---------- Tipografía general ---------- */
+html, body, [class*="st-"] {
+    font-family: var(--font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display) !important;
+    color: var(--color-sand) !important;
+    text-align: center;
+    width: 100%;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-container img {
+    width: 100%;
+    display: block;
+    filter: brightness(0.55);
+    transition: filter 0.6s ease;
+}
+
+.hero-container:hover img {
+    filter: brightness(0.7);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(
+        180deg,
+        rgba(14,17,23,.2) 0%,
+        rgba(14,17,23,.65) 100%
+    );
+}
+
+.hero-overlay h1 {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    color: #fff !important;
+    margin-bottom: .5rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,.6);
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-overlay p {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: var(--color-sand);
+    max-width: 700px;
+    line-height: 1.7;
+    text-shadow: 0 2px 10px rgba(0,0,0,.5);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+    text-align: center;
+    font-family: var(--font-display) !important;
+    font-size: 2.2rem;
+    color: var(--color-gold) !important;
+    margin: 3rem 0 1.5rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-olive), var(--color-gold));
+    margin: 0.6rem auto 0;
+    border-radius: 2px;
+}
+
+/* ---------- Texto centrado para descripciones ---------- */
+.centered-description {
+    text-align: center !important; /* Forzar centrado para evitar conflictos con estilos de Streamlit */
+    font-size: 1.1rem;
+    color: #9ca3af;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.7;
+    display: block;
+    width: 100%;
+}
+
+/* ---------- Grid gallery ---------- */
+.grid-img-wrapper {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s ease;
+}
+
+.grid-img-wrapper:hover {
+    transform: scale(1.03);
+}
+
+.grid-img-wrapper img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- Captions de imágenes ---------- */
+.stCaption {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* ---------- Breath / CTA section ---------- */
+.breath-section {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 3rem 0;
+    box-shadow: var(--shadow);
+}
+
+.breath-section img {
+    width: 100%;
+    display: block;
+    filter: brightness(0.45);
+}
+
+.breath-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.breath-overlay h2 {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    color: #fff !important;
+    text-shadow: 0 4px 20px rgba(0,0,0,.6);
+    margin-bottom: .5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.breath-overlay p {
+    color: var(--color-sand);
+    font-size: 1.15rem;
+    max-width: 650px;
+    line-height: 1.7;
+    text-shadow: 0 2px 10px rgba(0,0,0,.4);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ---------- Divider ---------- */
+.fancy-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    width: 100%;
+}
+
+.fancy-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-olive), transparent);
+}
+
+.fancy-divider .icon {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+/* ---------- Footer ---------- */
+.footer-text {
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+    color: #6b7280;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.footer-text span {
+    font-size: 0.78rem;
+    color: #4b5563;
+}
+
+/* ---------- Ocultar elementos por defecto de Streamlit ---------- */
+#MainMenu {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+div[data-testid="stToolbar"] {
+    display: none;
+}
+
+div[data-testid="stDecoration"] {
+    display: none;
+}
+
+div[data-testid="stStatusWidget"] {
+    display: none;
+}
+
+/* ---------- Historia — Acordeón HTML puro ---------- */
+.acordeon-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.acordeon-item {
+    border: 1px solid rgba(107, 142, 35, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(22, 27, 34, 0.7);
+    transition: border-color 0.3s ease;
+}
+
+.acordeon-item:hover {
+    border-color: rgba(200, 169, 81, 0.45);
+}
+
+.acordeon-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.4rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.25s ease;
+}
+
+.acordeon-btn:hover {
+    background: rgba(107, 142, 35, 0.08);
+}
+
+.acordeon-btn.active {
+    background: rgba(107, 142, 35, 0.12);
+    border-bottom: 1px solid rgba(107, 142, 35, 0.25);
+}
+
+.acordeon-icono {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.acordeon-titulo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    color: #E8E4DC;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.acordeon-btn.active .acordeon-titulo {
+    color: #C8A951;
+}
+
+.acordeon-flecha {
+    font-size: 0.8rem;
+    color: #6B8E23;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.acordeon-contenido p {
+    color: #d1d5db;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ---------- Tabla comparativa ---------- */
+.section-subtitle {
+    text-align: center !important;
+    font-family: var(--font-display) !important;
+    font-size: 1.5rem !important;
+    color: var(--color-sand) !important;
+    margin: 2.5rem 0 1.5rem 0 !important;
+}
+
+.tabla-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    margin: 1rem 0 2.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.tabla-comparativa {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    background: var(--color-card-bg);
+}
+
+.tabla-comparativa thead tr {
+    background: linear-gradient(90deg, rgba(107,142,35,0.3), rgba(200,169,81,0.2));
+}
+
+.tabla-comparativa th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-family: var(--font-display) !important;
+    font-size: 0.95rem;
+    color: var(--color-sand) !important;
+    border-bottom: 2px solid rgba(107, 142, 35, 0.4);
+    white-space: nowrap;
+}
+
+.tabla-comparativa td {
+    padding: 0.85rem 1.2rem;
+    color: #9ca3af;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.tabla-comparativa tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-comparativa tbody tr:hover td {
+    background: rgba(107, 142, 35, 0.06);
+}
+
+.tabla-comparativa td:first-child {
+    color: var(--color-sand);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.resultado-malo {
+    color: #f87171 !important;
+}
+
+.resultado-bueno {
+    color: #86efac !important;
+}
+
+.resultado-excelente {
+    color: var(--color-gold) !important;
+    font-weight: 600 !important;
+}
+
+/* ---------- Ajustes responsive ---------- */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .centered-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+    
+    .breath-overlay h2 {
+        font-size: 1.6rem;
+    }
+    
+    .breath-overlay p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    
+    
+    .tabla-comparativa th,
+    .tabla-comparativa td {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+/* ---------- Estilos de impresión / exportar PDF ---------- */
+@media print {
+    /* Ocultar elementos de Streamlit innecesarios */
+    #MainMenu, header, footer,
+    div[data-testid="stToolbar"],
+    div[data-testid="stDecoration"],
+    div[data-testid="stStatusWidget"],
+    div[data-testid="stSidebarNav"],
+    section[data-testid="stSidebar"],
+    .pdf-fab { display: none !important; }
+
+    /* Fondo oscuro al imprimir */
+    html, body, [class*="st-"] {
+        background: #0E1117 !important;
+        color: #E8E4DC !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Evitar cortes en medio de secciones */
+    .hero-container,
+    .breath-section,
+    .grid-img-wrapper,
+    .acordeon-item,
+    .fancy-divider {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* Márgenes de página */
+    @page {
+        margin: 1.5cm 1.2cm;
+        size: A4;
+    }
+}
